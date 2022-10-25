@@ -51,17 +51,28 @@ const Navbar = () => {
             {user && user.uid ? (
               user.photoURL ? (
                 <>
-                  <img src={user.photoURL} alt="profile" className="profile" />
-                  <Link onClick={signOut}>Logout</Link>
+                  <img
+                    title={user.displayName}
+                    src={user.photoURL}
+                    alt="profile"
+                    className="profile"
+                  />
+                  <Link className="login" onClick={signOut}>
+                    Logout
+                  </Link>
                 </>
               ) : (
-                <div>
-                  <FaUser />
-                  <Link onClick={signOut}>Logout</Link>
+                <div className="logout">
+                  <FaUser className="empty-user" title={user.displayName} />
+                  <Link className="login" onClick={signOut}>
+                    Logout
+                  </Link>
                 </div>
               )
             ) : (
-              <Link to={"/login"}>Login</Link>
+              <Link className="login" to={"/login"}>
+                Login
+              </Link>
             )}
           </div>
         </div>

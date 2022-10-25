@@ -28,6 +28,7 @@
 
 .menu li a,
 .user-login-logout a {
+  font-size: 16px;
   text-decoration: none;
   color: #fff;
 }
@@ -49,12 +50,32 @@
 .userProfile .dark-icon {
   color: #fff;
   font-size: 30px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .profile {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50px;
   object-fit: cover;
+}
+
+.login {
+  padding: 6px 12px;
+  background-color: #fff;
+  color: #2d3436 !important;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.empty-user {
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 50px;
+  background-color: #b2bec3;
 }
