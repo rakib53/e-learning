@@ -1,0 +1,60 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #2d8a76;
+}
+
+.menu-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand .logo {
+  width: 100px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu li a,
+.user-login-logout a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.user-login-logout {
+  display: flex;
+  align-items: center;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+}
+
+.user-login-logout a {
+  margin: 0 10px;
+}
+
+.userProfile .dark-icon {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  object-fit: cover;
+}

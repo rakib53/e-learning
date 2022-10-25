@@ -1,0 +1,119 @@
+.registration {
+  display: flex;
+  justify-content: center;
+}
+
+.registration_wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  margin-top: 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.registration_wrapper .create-acc {
+  text-align: center;
+  font-size: 36px;
+  color: #3ab399;
+  margin-bottom: 20px;
+}
+
+.social-login {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #91a5a1;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 3px;
+}
+
+.icon:hover {
+  color: #fff;
+  background-color: #91a5a1;
+  transition: all 0.3s ease-in-out;
+}
+
+.use-in {
+  color: #91a5a1;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+
+.registrationForm input {
+  padding: 15px;
+  background-color: #dee4e3;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.registration input:focus {
+  background-color: #e8f0fe;
+  transition: all 0.3s ease-in-out;
+}
+
+.inputFiled {
+  width: 100%;
+  position: relative;
+}
+
+.eye {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.sign-up-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up {
+  text-transform: uppercase;
+  padding: 15px 50px;
+  border-radius: 50px;
+  background-color: #3ab399;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  width: 40%;
+  margin-top: 10px;
+}
+
+.sign-up:hover {
+  cursor: pointer;
+  background-color: #2d8a76;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+}
+
+.login-link {
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .registration-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
