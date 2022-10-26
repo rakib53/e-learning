@@ -3,6 +3,7 @@ import Main from "../../Main/Main";
 import Blog from "../../pages/Blog/Blog";
 import Courses from "../../pages/Courses/Courses";
 import Login from "../../pages/login/Login";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import Registration from "../../pages/Registration/Registration";
 import CategorDetails from "../Category-details/CategorDetails";
 import Checkout from "../Category/Checkout";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/*",
+        element: <NotFoundPage></NotFoundPage>,
       },
     ],
   },
