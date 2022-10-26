@@ -49,8 +49,18 @@
 
 .userProfile .dark-icon {
   color: #fff;
-  font-size: 30px;
+  width: 45px;
+  height: 45px;
+  padding: 6px;
   margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.userProfile .dark-icon:hover {
+  border-radius: 50px;
+  background-color: #95a5a6;
+  transition: all 0.3s ease-in;
 }
 
 .profile {
@@ -83,13 +93,6 @@
 .mobile-menu {
   display: none;
 }
-
-/* .mobile-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
 
 @media screen and (max-width: 550px) {
   .mobile-menu {

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { CiLight } from "react-icons/ci";
 import { FaBars, FaUser } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [darkLight, setDarkLight] = useState(true);
   const { user, userSignOut } = useContext(AuthProvider);
 
   const notify = (msg) => toast(msg);
@@ -25,6 +27,11 @@ const Navbar = () => {
 
   const getToggle = () => {
     setToggle(!toggle);
+  };
+
+  const getTheme = () => {
+    console.log(darkLight);
+    setDarkLight(!darkLight);
   };
 
   return (
@@ -57,8 +64,12 @@ const Navbar = () => {
           className="userProfile"
           style={toggle ? { left: 0 } : { left: "-1000px" }}
         >
-          <div>
-            <MdOutlineDarkMode className="dark-icon" />
+          <div onClick={getTheme}>
+            {darkLight ? (
+              <CiLight className="dark-icon" />
+            ) : (
+              <MdOutlineDarkMode className="dark-icon" />
+            )}
           </div>
           <div className="user-login-logout">
             {user && user.uid ? (
