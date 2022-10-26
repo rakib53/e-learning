@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaBars, FaUser } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import logo from "../../images/logo.jpg";
 import { AuthProvider } from "../../UserContext/UserContext";
 import "./Navbar.css";
@@ -10,13 +11,15 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const { user, userSignOut } = useContext(AuthProvider);
 
+  const notify = (msg) => toast(msg);
+
   const signOut = () => {
     userSignOut()
       .then((res) => {
-        console.log("get out");
+        notify("Log out Successfully!");
       })
       .catch((err) => {
-        console.log(err.message);
+        notify(err.message);
       });
   };
 
@@ -87,6 +90,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

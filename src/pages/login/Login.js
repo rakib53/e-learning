@@ -6,8 +6,10 @@ import {
 import React, { useContext, useState } from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { BsEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Input from "../../components/Input/InputField";
 import { AuthProvider } from "../../UserContext/UserContext";
 import "./Login.css";
@@ -22,6 +24,8 @@ const Login = () => {
     setEye(!eye);
   };
 
+  const notify = (msg) => toast(msg);
+
   const { signInWithGoogle, signInWithEmailPass } = useContext(AuthProvider);
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
@@ -33,11 +37,12 @@ const Login = () => {
     const password = event.target.password.value;
     signInWithEmailPass(email, password)
       .then((userCredential) => {
+        notify("Login Success");
         navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        notify(errorMessage);
       });
 
     event.target.email.value = "";
@@ -45,21 +50,36 @@ const Login = () => {
   };
 
   const SignInToGoogle = () => {
-    signInWithGoogle(googleProvider).then((res) => {
-      navigate(from, { replace: true });
-    });
+    signInWithGoogle(googleProvider)
+      .then((res) => {
+        notify("Login Success");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        notify(err.message);
+      });
   };
 
   const signInToFacebook = () => {
-    signInWithGoogle(facebookProvider).then((res) => {
-      navigate(from, { replace: true });
-    });
+    signInWithGoogle(facebookProvider)
+      .then((res) => {
+        notify("Login Success");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        notify(err.message);
+      });
   };
 
   const signInToGithub = () => {
-    signInWithGoogle(githubProvider).then((res) => {
-      navigate(from, { replace: true });
-    });
+    signInWithGoogle(githubProvider)
+      .then((res) => {
+        notify("Login Success");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        notify(err.message);
+      });
   };
 
   return (
@@ -69,7 +89,7 @@ const Login = () => {
         <div className="social-login">
           <FaFacebookF className="icon" onClick={signInToFacebook} />
           <AiOutlineGoogle className="icon" onClick={SignInToGoogle} />
-          <FaLinkedinIn className="icon" onClick={signInToGithub} />
+          <FaGithub className="icon" onClick={signInToGithub} />
         </div>
         <hr className="horizontal-line" />
         <p className="use-in">Or use your mail for login.</p>
@@ -97,11 +117,10 @@ const Login = () => {
             </p>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
 };
 
 export default Login;
-
-// onSubmit={getLogin}
