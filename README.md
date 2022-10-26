@@ -1,10 +1,21 @@
-# Getting Started with Create React App
+# Getting Knowing about our project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Live [link](https://voluble-salmiakki-55e05d.netlify.app/) of this project is https://voluble-salmiakki-55e05d.netlify.app/
 
-## Available Scripts
+## About some features of this project
 
-In the project directory, you can run:
+- This is a react project that taken by programming hero assignment.
+- this website about is a Learning Programming Thought.
+- This website has a home where you can see a hero section.
+  .
+- Also have a course section and can you see the details about single course.
+- You can click on the specific course to know about the fundemenal details in programming.
+- you can registration and login here with your email password.
+- Also have a Protected route where you need to login if youre not login here.
+- Have a blog page where can we get some Interview Question for React.
+- and the whole website is responsive for desktop, mobile, tablet etc.
+
+## How can you run the website
 
 ### `npm start`
 
