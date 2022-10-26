@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.init";
@@ -40,6 +41,12 @@ const UserContext = ({ children }) => {
     };
   }, []);
 
+  const addedUserName = (currentUsers) => {
+    return updateProfile(auth.currentUser, {
+      displayName: currentUsers,
+    });
+  };
+
   const userSignOut = () => {
     return signOut(auth);
   };
@@ -53,6 +60,7 @@ const UserContext = ({ children }) => {
         createUserWithEmailPass,
         signInWithEmailPass,
         userSignOut,
+        addedUserName,
       }}
     >
       {children}

@@ -17,9 +17,29 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-/* .category-details .name {
-  margin-bottom: 10px;
-} */
+.name-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.downloadBtn {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.downloadBtn:hover {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 50px;
+  color: #fff;
+  transition: all 0.3s ease-in;
+  background-color: #95a5a6;
+}
 
 .category-details .description {
   margin-bottom: 10px;

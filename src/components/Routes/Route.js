@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Main/Main";
+import Blog from "../../pages/Blog/Blog";
 import Courses from "../../pages/Courses/Courses";
 import Login from "../../pages/login/Login";
 import Registration from "../../pages/Registration/Registration";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             <Checkout></Checkout>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },

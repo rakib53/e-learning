@@ -2,9 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./CategoryDetails.css";
+import Pdf from "react-to-pdf";
+import { FaDownload } from "react-icons/fa";
 
 const CategorDetails = () => {
   let { id } = useParams();
+  const ref = React.createRef();
 
   const [category, setCategory] = useState([]);
 
@@ -23,9 +26,16 @@ const CategorDetails = () => {
 
   return (
     <div className="detailsContainer">
-      <div className="category-details">
+      <div className="category-details" ref={ref}>
         <img className="detailsImage" src={category.photoURL} alt="" />
-        <h3 className="name">{category.name}</h3>
+        <div className="name-container">
+          <h3 className="name">{category.name}</h3>
+          <Pdf targetRef={ref} filename="code-example.pdf">
+            {({ toPdf }) => (
+              <FaDownload onClick={toPdf} className="downloadBtn" />
+            )}
+          </Pdf>
+        </div>
         <div className="content">
           <p>Designed By: {category.designBy}</p>
           <p>Develop By: {category.developer}</p>

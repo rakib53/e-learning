@@ -19,17 +19,22 @@ const Registration = () => {
   const facebookProvider = new FacebookAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
-  const { signInWithGoogle, createUserWithEmailPass, userSignOut } =
-    useContext(AuthProvider);
+  const {
+    signInWithGoogle,
+    createUserWithEmailPass,
+    userSignOut,
+    addedUserName,
+  } = useContext(AuthProvider);
 
   const getUserWithEmailPass = (event) => {
     event.preventDefault();
-    // const name = event.target.name.value;
+    const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     createUserWithEmailPass(email, password)
       .then((res) => {
         navigate("/login");
+        addedUserName(name);
         userSignOut()
           .then((res) => {})
           .catch((err) => {
@@ -41,6 +46,7 @@ const Registration = () => {
         console.log(errorMessage);
       });
 
+    event.target.name.value = "";
     event.target.email.value = "";
     event.target.password.value = "";
   };
