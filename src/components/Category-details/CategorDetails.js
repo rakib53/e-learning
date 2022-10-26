@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import "./CategoryDetails.css";
-import Pdf from "react-to-pdf";
 import { FaDownload } from "react-icons/fa";
+import { Link, useParams } from "react-router-dom";
+import Pdf from "react-to-pdf";
+import "./CategoryDetails.css";
 
 const CategorDetails = () => {
   let { id } = useParams();
@@ -43,7 +43,7 @@ const CategorDetails = () => {
         <p className="description">{category.description}</p>
         <p>Avabiale Job {category.avaliableJob}</p>
         <p>Anual Salaey {category.anualSalary}</p>
-        <Link to={"/checkout"} className="premiumBtn">
+        <Link to={`/checkout/${id}`} className="premiumBtn">
           get premium know more
         </Link>
       </div>

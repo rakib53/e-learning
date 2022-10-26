@@ -1,0 +1,36 @@
+.banner {
+  width: 100%;
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%),
+    url("../../images/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .title {
+  color: #fff;
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.banner .desc {
+  color: #fff;
+  text-align: center;
+}
+
+.explore {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.home-course {
+  width: 100%;
+  max-width: 1440px;
+  margin: 80px auto;
+}

@@ -88,39 +88,6 @@ const Registration = () => {
     setEye(!eye);
   };
 
-  // const SignUpWithPassEmail = (event) => {
-  //   event.preventDefault();
-  //   const name = event.target.name.value;
-  //   const email = event.target.email.value;
-  //   const password = event.target.password.value;
-
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       const user = userCredential.user;
-  //       setUser(user);
-  //       displayName(name);
-  //     })
-  //     .catch((error) => {
-  //       const errorMessage = error.message;
-  //       console.log(errorMessage);
-  //     });
-  //   event.target.name.value = "";
-  //   event.target.email.value = "";
-  //   event.target.password.value = "";
-  // };
-
-  // const displayName = (name) => {
-  //   updateProfile(auth.currentUser, {
-  //     displayName: name,
-  //   })
-  //     .then(() => {
-  //       console.log("successfully Updated Name");
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   return (
     <div className="registration">
       <div className="registration_wrapper">

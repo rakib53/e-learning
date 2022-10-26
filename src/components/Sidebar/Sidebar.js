@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -21,9 +22,13 @@ const Sidebar = () => {
       <h2 className="categories-title">Explore More From Programming</h2>
       {category.map((category) => {
         return (
-          <p className="categories-name" key={category.id}>
+          <Link
+            to={`/category/${category.id}`}
+            className="categories-name"
+            key={category.id}
+          >
             {category.name}
-          </p>
+          </Link>
         );
       })}
     </div>
