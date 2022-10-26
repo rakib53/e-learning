@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { BsEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Input from "../../components/Input/InputField";
 import { AuthProvider } from "../../UserContext/UserContext";
 import "./Login.css";
@@ -15,6 +15,9 @@ import "./Login.css";
 const Login = () => {
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const handleEye = () => {
     setEye(!eye);
   };
@@ -30,7 +33,7 @@ const Login = () => {
     const password = event.target.password.value;
     signInWithEmailPass(email, password)
       .then((userCredential) => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -43,39 +46,21 @@ const Login = () => {
 
   const SignInToGoogle = () => {
     signInWithGoogle(googleProvider).then((res) => {
-      navigate("/");
+      navigate(from, { replace: true });
     });
   };
 
   const signInToFacebook = () => {
     signInWithGoogle(facebookProvider).then((res) => {
-      navigate("/");
+      navigate(from, { replace: true });
     });
   };
 
   const signInToGithub = () => {
     signInWithGoogle(githubProvider).then((res) => {
-      navigate("/");
+      navigate(from, { replace: true });
     });
   };
-
-  //   const getLogin = (event) => {
-  //     event.preventDefault();
-  //     const email = event.target.email.value;
-  //     const password = event.target.password.value;
-  //     signInWithEmailAndPassword(auth, email, password)
-  //       .then((userCredential) => {
-  //         const user = userCredential.user;
-  //         setUser(user);
-  //       })
-  //       .catch((error) => {
-  //         const errorMessage = error.message;
-  //         console.log(errorMessage);
-  //       });
-
-  //     event.target.email.value = "";
-  //     event.target.password.value = "";
-  //   };
 
   return (
     <div className="login-page">

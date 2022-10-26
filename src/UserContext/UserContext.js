@@ -14,20 +14,25 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState("");
+  const [loader, setLoader] = useState(true);
+
   const createUserWithEmailPass = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signInWithEmailPass = (email, password) => {
+    setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const signInWithGoogle = (provider) => {
+    setLoader(true);
     return signInWithPopup(auth, provider);
   };
 
   useEffect(() => {
-    const getIt = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const getIt = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoader(false);
     });
 
     return () => {
@@ -43,6 +48,7 @@ const UserContext = ({ children }) => {
     <AuthProvider.Provider
       value={{
         user,
+        loader,
         signInWithGoogle,
         createUserWithEmailPass,
         signInWithEmailPass,

@@ -1,0 +1,11 @@
+.categories-title {
+  margin-bottom: 20px;
+}
+
+.categories-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 50px;
+  text-decoration: underline;
+  cursor: pointer;
+}
