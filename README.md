@@ -1,6 +1,7 @@
 # Getting Knowing about our project
 
 The Live [link](https://e-learning-5590a.web.app//) of this project is https://e-learning-5590a.web.app/
+and the Server of the project is https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-rakib53
 
 ## About some features of this project
 
